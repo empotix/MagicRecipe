@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6470EF181C4DF44E009ACF0C /* DetailedRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6470EF171C4DF44E009ACF0C /* DetailedRecipe.m */; };
 		64DED82F1C4D159E005F6795 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DED82E1C4D159E005F6795 /* main.m */; };
 		64DED8321C4D159E005F6795 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DED8311C4D159E005F6795 /* AppDelegate.m */; };
 		64DED8351C4D159E005F6795 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DED8341C4D159E005F6795 /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6470EF161C4DF44E009ACF0C /* DetailedRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedRecipe.h; sourceTree = "<group>"; };
+		6470EF171C4DF44E009ACF0C /* DetailedRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedRecipe.m; sourceTree = "<group>"; };
 		64DED82A1C4D159E005F6795 /* Magic Recipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Magic Recipe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64DED82E1C4D159E005F6795 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		64DED8301C4D159E005F6795 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 			children = (
 				64DED8331C4D159E005F6795 /* ViewController.h */,
 				64DED8341C4D159E005F6795 /* ViewController.m */,
+				6470EF161C4DF44E009ACF0C /* DetailedRecipe.h */,
+				6470EF171C4DF44E009ACF0C /* DetailedRecipe.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				64DED84D1C4D1871005F6795 /* Recipe.m in Sources */,
 				64DED8991C4D2D61005F6795 /* UIImage+WebP.m in Sources */,
 				64DED89B1C4D2D61005F6795 /* UIImageView+WebCache.m in Sources */,
+				6470EF181C4DF44E009ACF0C /* DetailedRecipe.m in Sources */,
 				64DED8911C4D2D61005F6795 /* SDWebImageDecoder.m in Sources */,
 				64DED8321C4D159E005F6795 /* AppDelegate.m in Sources */,
 				64DED88D1C4D2D61005F6795 /* MKAnnotationView+WebCache.m in Sources */,
@@ -473,6 +479,7 @@
 				64DED8431C4D159E005F6795 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

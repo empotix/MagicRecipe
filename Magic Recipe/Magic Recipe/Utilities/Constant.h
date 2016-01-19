@@ -8,4 +8,4 @@
 
 
 #define  RECIPE_API_PAGE     @"http://www.recipepuppy.com/api/?p"
-#define  RECIPE_SEARCH_API   @"http://www.recipepuppy.com/api/?i="
+#define  RECIPE_SEARCH_API   @"http://www.recipepuppy.com/api/?i"
