@@ -30,8 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.recipeArray = [NSMutableArray new];
-    pageNumber=1;
-    NSString *urlWithPageNo1 = [NSString stringWithFormat:@"%@=%ld",RECIPE_API_PAGE,pageNumber];
+    pageNumber=0;
+    NSString *urlWithPageNo1 = [NSString stringWithFormat:@"%@=%ld",RECIPE_API_PAGE,++pageNumber];
     loading=true;
     dataLoadedBy = @"All";
     [self makeAPICall:urlWithPageNo1];
@@ -51,6 +51,10 @@
         if(error) {
              [self hideHUD];
             //Need to show Alert when error occures
+            NSLog(@"Error occured in fetching data");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.recipeTableView reloadData];
+            });
         }else {
             NSDictionary *responseResult = [NSJSONSerialization JSONObjectWithData:data options:1 error:nil];
             
@@ -137,11 +141,15 @@
     }
 }
 
+#pragma mark - Loading Data, Search By Ingredient, Load All Recipes
+#pragma mark
+
 -(void) loadDataDelayed {
     NSString *urlWithPageNo = [NSString stringWithFormat:@"%@=%ld",RECIPE_API_PAGE,++pageNumber];
     loading=true;
     [self makeAPICall:urlWithPageNo];
 }
+
 - (IBAction)loadAllRecipes:(id)sender {
     if([dataLoadedBy isEqualToString:@"All"]) return;
     dataLoadedBy = @"All";
@@ -152,12 +160,14 @@
     loading=true;
     [self makeAPICall:urlWithPageNo];
 }
+
 - (IBAction)searchByIngredients:(id)sender {
     dataLoadedBy = @"Search";
     self.recipeArray = [NSMutableArray new];
     NSString *searchIngredients = self.ingredientTextField.text;
     pageNumber=0;
     NSString *urlWithPageNo = [NSString stringWithFormat:@"%@=%@&p=%ld",RECIPE_SEARCH_API,searchIngredients,++pageNumber];
+    urlWithPageNo = [urlWithPageNo stringByReplacingOccurrencesOfString:@" " withString:@""];
     loading=true;
     [self makeAPICall:urlWithPageNo];
 }
